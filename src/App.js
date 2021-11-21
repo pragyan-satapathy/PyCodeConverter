@@ -31,9 +31,9 @@ class App extends Component  {
       console.log(process.env.REACT_APP_CONVERTER)
       console.log('**********************************response')
       console.log(response)
-      console.log('**********************************response.text()')
-      console.log(response.text())
       const data = await response.text()
+      console.log('**********************************response.text()')
+      console.log(data)
       this.setState({ python_2_code: data });
     } catch (error) {
       console.log('catch',error);
