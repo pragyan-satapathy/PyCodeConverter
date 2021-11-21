@@ -27,6 +27,12 @@ class App extends Component  {
         method: 'POST',
         body: this.state.python_3_code
       });
+      console.log('**********************************api')
+      console.log(process.env.REACT_APP_CONVERTER)
+      console.log('**********************************response')
+      console.log(response)
+      console.log('**********************************response.text()')
+      console.log(response.text())
       const data = await response.text()
       this.setState({ python_2_code: data });
     } catch (error) {
