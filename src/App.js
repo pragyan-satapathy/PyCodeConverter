@@ -23,20 +23,15 @@ class App extends Component  {
   }
   async getPyhton2Code() {
     try {
-      const response = await fetch('http://removedoptparse-env.eba-evqeqawt.us-east-2.elasticbeanstalk.com/convert', {
+      const response = await fetch(process.env.REACT_APP_CONVERTER, {
         method: 'POST',
         body: this.state.python_3_code
       });
-      console.log('**********************************response')
-      console.log(response)
       const data = await response.text()
-      console.log('**********************************response.text()')
-      console.log(data)
       this.setState({ python_2_code: data });
     } catch (error) {
       console.log('catch',error);
     } finally {
-      
     }
   }
 
