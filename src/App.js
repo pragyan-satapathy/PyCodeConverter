@@ -23,7 +23,7 @@ class App extends Component  {
   }
   async getPyhton2Code() {
     try {
-      const response = await fetch(process.env.REACT_APP_CONVERTER, {
+      const response = await fetch(https://tqzxxd.xyz/convert, {
         method: 'POST',
         body: this.state.python_3_code
       });
