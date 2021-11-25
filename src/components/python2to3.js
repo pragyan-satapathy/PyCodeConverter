@@ -6,7 +6,7 @@ import {
   Button,
 } from '@material-ui/core';
 
-class Python3to2 extends Component  {
+class Python2to3 extends Component  {
   render() {
     return (
         <Box>
@@ -21,8 +21,8 @@ class Python3to2 extends Component  {
                 fullWidth
                 minRows='20'
                 maxRows='20'
-                defaultValue={this.props.python_3_code} 
-                onChange={this.props.handlePython_3_code}
+                defaultValue={this.props.python_2_code} 
+                onChange={this.props.handlePython_2_code}
                 style={{
                   backgroundColor: "#ffd180"
                 }}
@@ -39,7 +39,7 @@ class Python3to2 extends Component  {
                 fullWidth
                 minRows='20'
                 maxRows='20'
-                value={this.props.python_2_code}
+                value={this.props.python_3_code}
                 inputProps={
                   { readOnly: true, }
                 }
@@ -56,7 +56,7 @@ class Python3to2 extends Component  {
              variant="contained" 
              color="primary" 
              size="small" 
-             onClick={this.props.getPyhton2Code}>
+             onClick={this.props.getPyhton3Code}>
               CONVERT
             </Button>
           </Grid>
@@ -66,4 +66,4 @@ class Python3to2 extends Component  {
   }
 }
 
-export default Python3to2;
+export default Python2to3;

@@ -4,8 +4,7 @@ import {
   Toolbar,
   Typography,
 } from '@material-ui/core';
-import Label from './components/label';
-import Python3to2 from './components/python3to2';
+import TabBar from './components/tabBar';
 
 class App extends Component  {
   constructor() {
@@ -16,10 +15,15 @@ class App extends Component  {
         which_converter: '3to2',
     };
     this.handlePython_3_code = this.handlePython_3_code.bind(this);
+    this.handlePython_2_code = this.handlePython_2_code.bind(this);
     this.getPyhton2Code = this.getPyhton2Code.bind(this);
+    this.getPyhton3Code = this.getPyhton3Code.bind(this);
   }
   handlePython_3_code(event) {
     this.setState({python_3_code: event.target.value});
+  }
+  handlePython_2_code(event) {
+    this.setState({python_2_code: event.target.value});
   }
   async getPyhton2Code() {
     try {
@@ -36,13 +40,44 @@ class App extends Component  {
       });
       const data = await response.json()
       
-      // changecode
-      // change the following code to handle different situation
-      this.setState({ python_2_code: data['code'] });
+      const final_res = 
+      (data.error_client) ?
+        'Please check your code. There might have some syntax error!'
+      : (data.error_server) ?
+        'Sorry, there is some error from the server-side!'
+      : data['code']
+
+      this.setState({ python_2_code: final_res });
     } catch (error) {
       console.log('catch',error);
     } finally {
+    }
+  }
+  async getPyhton3Code() {
+    try {
+      const response = await fetch(process.env.REACT_APP_CONVERTER, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          "convert_key":"2to3",
+          "code":`${this.state.python_2_code}`
+        }),
+      });
+      const data = await response.json()
       
+      const final_res = 
+      (data.error_client) ?
+        'Please check your code. There might have some syntax error!'
+      : (data.error_server) ?
+        'Sorry, there is some error from the server-side!'
+      : data['code']
+
+      this.setState({ python_3_code: final_res });
+    } catch (error) {
+      console.log('catch',error);
+    } finally {
     }
   }
 
@@ -52,16 +87,15 @@ class App extends Component  {
         <Toolbar style={{ background: '#2E3B55',color: 'white' }}>
           <Typography variant="h5">Python Code Converter</Typography>
         </Toolbar>
-        <Label 
+        <TabBar
           python_3_code={this.state.python_3_code}
           python_2_code={this.state.python_2_code}
-          which_converter={this.state.which_converter}></Label>
-        <Python3to2 
-          python_3_code={this.state.python_3_code}
-          python_2_code={this.state.python_2_code}
+          which_converter={this.state.which_converter}
           handlePython_3_code={this.handlePython_3_code}
+          handlePython_2_code={this.handlePython_2_code}
           getPyhton2Code={this.getPyhton2Code}
-        ></Python3to2>
+          getPyhton3Code={this.getPyhton3Code}
+        ></TabBar>
       </Box >
     );
   }
