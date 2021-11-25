@@ -25,10 +25,20 @@ class App extends Component  {
     try {
       const response = await fetch(process.env.REACT_APP_CONVERTER, {
         method: 'POST',
-        body: this.state.python_3_code
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          "convert_key":"3to2",
+          "code":`${this.state.python_3_code}`
+
+        }),
       });
-      const data = await response.text()
-      this.setState({ python_2_code: data });
+      const data = await response.json()
+      
+      // changecode
+      // change the following code to handle different situation
+      this.setState({ python_2_code: data['code'] });
     } catch (error) {
       console.log('catch',error);
     } finally {
