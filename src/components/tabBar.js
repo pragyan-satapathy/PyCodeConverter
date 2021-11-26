@@ -17,6 +17,7 @@ class TabBar extends Component {
     }
     handleTabs(e,val) {
         this.setState({tab_value: val});
+        this.props.clearStateOnTabChange();
     }
     render() {
         return (

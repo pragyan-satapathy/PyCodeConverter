@@ -20,12 +20,17 @@ class App extends Component  {
     this.handlePython_2_code = this.handlePython_2_code.bind(this);
     this.getPyhton2Code = this.getPyhton2Code.bind(this);
     this.getPyhton3Code = this.getPyhton3Code.bind(this);
+    this.clearStateOnTabChange = this.clearStateOnTabChange.bind(this);
   }
   handlePython_3_code(event) {
     this.setState({python_3_code: event.target.value});
   }
   handlePython_2_code(event) {
     this.setState({python_2_code: event.target.value});
+  }
+  clearStateOnTabChange() {
+    this.setState({python_3_code: ''});
+    this.setState({python_2_code: ''});
   }
   async getPyhton2Code() {
     try {
@@ -103,6 +108,7 @@ class App extends Component  {
           handlePython_2_code={this.handlePython_2_code}
           getPyhton2Code={this.getPyhton2Code}
           getPyhton3Code={this.getPyhton3Code}
+          clearStateOnTabChange={this.clearStateOnTabChange}
         ></TabBar>
       </Box >
     );
