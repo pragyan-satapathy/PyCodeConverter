@@ -93,7 +93,7 @@ class App extends Component  {
 
   render() {
     return (
-      <Box style={{ background: '#f5f5f5', height: '100vh' }}>
+      <Box style={{ background: '#eceff1', height: '100vh' }}>
         <Toolbar style={{ background: '#2E3B55',color: 'white' }}>
           <Typography variant="h5">Python Code Converter</Typography>
         </Toolbar>

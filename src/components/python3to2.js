@@ -27,7 +27,7 @@ class Python3to2 extends Component  {
                 defaultValue={this.props.python_3_code} 
                 onChange={this.props.handlePython_3_code}
                 style={{
-                  backgroundColor: "#ffd180",
+                  backgroundColor: "#FFFFFF",
                 }}
               />
                <Button 
@@ -57,7 +57,7 @@ class Python3to2 extends Component  {
                     { readOnly: true, }
                   }
                   style={{
-                    backgroundColor: "#ffd180"
+                    backgroundColor: "#FFFFFF"
                   }}
                 />
                 <Button 
