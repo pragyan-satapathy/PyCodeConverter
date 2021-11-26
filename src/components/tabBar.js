@@ -25,11 +25,11 @@ class TabBar extends Component {
               <Paper>
                 <Tabs value={this.state.tab_value} onChange={this.handleTabs} variant="fullWidth">
                     <Tab
-                     label = 'Python3 -> Python2' 
+                     label = 'Python2 -> Python3' 
                      style={{fontWeight:'600',}}
                     ></Tab>
                     <Tab
-                     label = 'Python2 -> Python3' 
+                     label = 'Python3 -> Python2' 
                      style={{fontWeight:'600',}}
                     ></Tab>
                 </Tabs>
@@ -39,20 +39,20 @@ class TabBar extends Component {
                 index={0}
                 python_3_code={this.props.python_3_code}
                 python_2_code={this.props.python_2_code}
-                which_converter='3to2'
-                handlePython_3_code={this.props.handlePython_3_code}
-                getPyhton2Code={this.props.getPyhton2Code}
-                loading3to2={this.props.loading3to2} 
+                which_converter='2to3'
+                handlePython_2_code={this.props.handlePython_2_code}
+                getPyhton3Code={this.props.getPyhton3Code}
+                loading2to3={this.props.loading2to3} 
                 >tab 1</TabPanel>
               <TabPanel 
                 value={this.state.tab_value} 
                 index={1}
                 python_3_code={this.props.python_3_code}
                 python_2_code={this.props.python_2_code}
-                which_converter='2to3'
-                handlePython_2_code={this.props.handlePython_2_code}
-                getPyhton3Code={this.props.getPyhton3Code}
-                loading2to3={this.props.loading2to3} 
+                which_converter='3to2'
+                handlePython_3_code={this.props.handlePython_3_code}
+                getPyhton2Code={this.props.getPyhton2Code}
+                loading3to2={this.props.loading3to2} 
                 >tab 2</TabPanel>
             </Box>
         );
