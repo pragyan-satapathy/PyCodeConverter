@@ -13,6 +13,8 @@ class App extends Component  {
         python_3_code: '',
         python_2_code: '',
         which_converter: '3to2',
+        loading3to2: false,
+        loading2to3: false,
     };
     this.handlePython_3_code = this.handlePython_3_code.bind(this);
     this.handlePython_2_code = this.handlePython_2_code.bind(this);
@@ -27,6 +29,7 @@ class App extends Component  {
   }
   async getPyhton2Code() {
     try {
+      this.setState({loading3to2: true});
       const response = await fetch(process.env.REACT_APP_CONVERTER, {
         method: 'POST',
         headers: {
@@ -51,10 +54,12 @@ class App extends Component  {
     } catch (error) {
       console.log('catch',error);
     } finally {
+      this.setState({loading3to2: false});
     }
   }
   async getPyhton3Code() {
     try {
+      this.setState({loading2to3: true});
       const response = await fetch(process.env.REACT_APP_CONVERTER, {
         method: 'POST',
         headers: {
@@ -78,6 +83,7 @@ class App extends Component  {
     } catch (error) {
       console.log('catch',error);
     } finally {
+      this.setState({loading2to3: false});
     }
   }
 
@@ -91,6 +97,8 @@ class App extends Component  {
           python_3_code={this.state.python_3_code}
           python_2_code={this.state.python_2_code}
           which_converter={this.state.which_converter}
+          loading3to2={this.state.loading3to2}
+          loading2to3={this.state.loading2to3}
           handlePython_3_code={this.handlePython_3_code}
           handlePython_2_code={this.handlePython_2_code}
           getPyhton2Code={this.getPyhton2Code}

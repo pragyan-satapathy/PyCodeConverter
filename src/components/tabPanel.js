@@ -20,6 +20,7 @@ class TabPanel extends Component {
                             python_2_code={this.props.python_2_code}
                             handlePython_3_code={this.props.handlePython_3_code}
                             getPyhton2Code={this.props.getPyhton2Code}
+                            loading3to2={this.props.loading3to2} 
                         ></Python3to2>
                     </div>
                 )
@@ -37,6 +38,7 @@ class TabPanel extends Component {
                             python_2_code={this.props.python_2_code}
                             handlePython_2_code={this.props.handlePython_2_code}
                             getPyhton3Code={this.props.getPyhton3Code}
+                            loading2to3={this.props.loading2to3} 
                         ></Python2to3>
                     </div>
                 )

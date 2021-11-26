@@ -23,8 +23,14 @@ class TabBar extends Component {
             <Box>
               <Paper>
                 <Tabs value={this.state.tab_value} onChange={this.handleTabs} variant="fullWidth">
-                    <Tab label = 'Python3 -> Python2' style={{fontWeight:'600',}}></Tab>
-                    <Tab label = 'Python2 -> Python3' style={{fontWeight:'600',}}></Tab>
+                    <Tab
+                     label = 'Python3 -> Python2' 
+                     style={{fontWeight:'600',}}
+                    ></Tab>
+                    <Tab
+                     label = 'Python2 -> Python3' 
+                     style={{fontWeight:'600',}}
+                    ></Tab>
                 </Tabs>
               </Paper>
               <TabPanel 
@@ -35,6 +41,7 @@ class TabBar extends Component {
                 which_converter={this.props.which_converter}
                 handlePython_3_code={this.props.handlePython_3_code}
                 getPyhton2Code={this.props.getPyhton2Code}
+                loading3to2={this.props.loading3to2} 
                 >tab 1</TabPanel>
               <TabPanel 
                 value={this.state.tab_value} 
@@ -44,6 +51,7 @@ class TabBar extends Component {
                 which_converter='2to3'
                 handlePython_2_code={this.props.handlePython_2_code}
                 getPyhton3Code={this.props.getPyhton3Code}
+                loading2to3={this.props.loading2to3} 
                 >tab 2</TabPanel>
             </Box>
         );

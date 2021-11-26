@@ -4,6 +4,7 @@ import {
   Box,
   Grid,
   Button,
+  CircularProgress,
 } from '@material-ui/core';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 
@@ -73,16 +74,18 @@ class Python3to2 extends Component  {
         </Grid>
         <Grid container alignItems = "center">
         <Grid item xs={12} align = "center">
-            <Button
-             variant="contained" 
-             color="primary" 
-             size="small" 
-             onClick={this.props.getPyhton2Code}>
-              CONVERT
-            </Button>
-          </Grid>
+          <Button
+            variant="contained" 
+            color="primary" 
+            size="large" 
+            onClick={this.props.getPyhton2Code}
+            disabled={this.props.loading3to2}>
+              {this.props.loading3to2 && <CircularProgress color="secondary" size={14} />}
+              {!this.props.loading3to2 && 'CONVERT'}
+          </Button>
         </Grid>
-      </Box >
+      </Grid>
+    </Box >
     );
   }
 }
