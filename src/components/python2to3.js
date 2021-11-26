@@ -79,9 +79,10 @@ class Python2to3 extends Component  {
             color="primary"  
             size="large" 
             onClick={this.props.getPyhton3Code}
-            disabled={this.props.loading2to3}>
-            {this.props.loading2to3 && <CircularProgress color="secondary" size={14} />}
-            {!this.props.loading2to3 && 'CONVERT'}
+            disabled={this.props.loading2to3}
+            style={{width: '180px',}}>
+            CONVERT
+            {this.props.loading2to3 && <Box pl={3}><CircularProgress color="secondary" size={14} /></Box>}
           </Button>
         </Grid>
       </Grid>

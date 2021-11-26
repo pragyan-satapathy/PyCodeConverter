@@ -79,9 +79,10 @@ class Python3to2 extends Component  {
             color="primary" 
             size="large" 
             onClick={this.props.getPyhton2Code}
-            disabled={this.props.loading3to2}>
-              {this.props.loading3to2 && <CircularProgress color="secondary" size={14} />}
-              {!this.props.loading3to2 && 'CONVERT'}
+            disabled={this.props.loading3to2}
+            style={{width: '180px',}}>
+              CONVERT
+              {this.props.loading3to2 && <Box pl={3}><CircularProgress color="secondary" size={14} /></Box>}
           </Button>
         </Grid>
       </Grid>
