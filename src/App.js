@@ -12,7 +12,6 @@ class App extends Component  {
     this.state = {
         python_3_code: '',
         python_2_code: '',
-        which_converter: '3to2',
         loading3to2: false,
         loading2to3: false,
     };
@@ -101,7 +100,6 @@ class App extends Component  {
         <TabBar
           python_3_code={this.state.python_3_code}
           python_2_code={this.state.python_2_code}
-          which_converter={this.state.which_converter}
           loading3to2={this.state.loading3to2}
           loading2to3={this.state.loading2to3}
           handlePython_3_code={this.handlePython_3_code}

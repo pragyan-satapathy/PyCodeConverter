@@ -39,7 +39,7 @@ class TabBar extends Component {
                 index={0}
                 python_3_code={this.props.python_3_code}
                 python_2_code={this.props.python_2_code}
-                which_converter={this.props.which_converter}
+                which_converter='3to2'
                 handlePython_3_code={this.props.handlePython_3_code}
                 getPyhton2Code={this.props.getPyhton2Code}
                 loading3to2={this.props.loading3to2} 

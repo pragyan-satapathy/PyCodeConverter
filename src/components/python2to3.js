@@ -74,18 +74,18 @@ class Python2to3 extends Component  {
         </Grid>
         <Grid container alignItems = "center">
         <Grid item xs={12} align = "center">
-            <Button
-             variant="contained" 
-             color="primary" 
-             size="small" 
-             onClick={this.props.getPyhton3Code}
-             disabled={this.props.loading2to3}>
-              {this.props.loading2to3 && <CircularProgress color="secondary" size={14} />}
-              {!this.props.loading2to3 && 'CONVERT'}
-            </Button>
-          </Grid>
+          <Button
+            variant="contained" 
+            color="primary"  
+            size="large" 
+            onClick={this.props.getPyhton3Code}
+            disabled={this.props.loading2to3}>
+            {this.props.loading2to3 && <CircularProgress color="secondary" size={14} />}
+            {!this.props.loading2to3 && 'CONVERT'}
+          </Button>
         </Grid>
-      </Box >
+      </Grid>
+    </Box >
     );
   }
 }
