@@ -23,8 +23,8 @@ class TabBar extends Component {
             <Box>
               <Paper>
                 <Tabs value={this.state.tab_value} onChange={this.handleTabs} variant="fullWidth">
-                    <Tab label = 'Python3 -> Python2'></Tab>
-                    <Tab label = 'Python2 -> Python3'></Tab>
+                    <Tab label = 'Python3 -> Python2' style={{fontWeight:'600',}}></Tab>
+                    <Tab label = 'Python2 -> Python3' style={{fontWeight:'600',}}></Tab>
                 </Tabs>
               </Paper>
               <TabPanel 
