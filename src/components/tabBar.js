@@ -3,7 +3,7 @@ import {
     Box,
     Tabs,
     Tab,
-    AppBar
+    Paper
 } from '@material-ui/core';
 import TabPanel from './tabPanel';
 
@@ -21,12 +21,12 @@ class TabBar extends Component {
     render() {
         return (
             <Box>
-              <AppBar position='static'>
-                <Tabs value={this.state.tab_value} onChange={this.handleTabs}>
-                    <Tab label = 'Python-3 -> Python-2'></Tab>
-                    <Tab label = 'Python-2 -> Python-3'></Tab>
+              <Paper>
+                <Tabs value={this.state.tab_value} onChange={this.handleTabs} variant="fullWidth">
+                    <Tab label = 'Python3 -> Python2'></Tab>
+                    <Tab label = 'Python2 -> Python3'></Tab>
                 </Tabs>
-              </AppBar>
+              </Paper>
               <TabPanel 
                 value={this.state.tab_value} 
                 index={0}

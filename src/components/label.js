@@ -30,11 +30,11 @@ class Label extends Component  {
   render() {
     let firstText, secondText;
     if (this.props.which_converter === '3to2') {
-      firstText = <h3>Python-3</h3>
-      secondText = <h3>Python-2</h3>
+      firstText = <h3>Python3</h3>
+      secondText = <h3>Python2</h3>
     } else if (this.props.which_converter === '2to3') {
-      firstText = <h3>Python-2</h3>
-      secondText = <h3>Python-3</h3>
+      firstText = <h3>Python2</h3>
+      secondText = <h3>Python3</h3>
     }
     return (
         <Box px={3}>

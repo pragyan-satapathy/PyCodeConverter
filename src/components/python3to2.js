@@ -19,8 +19,8 @@ class Python3to2 extends Component  {
                 variant="outlined"
                 color='primary'
                 fullWidth
-                minRows='20'
-                maxRows='20'
+                minRows='15'
+                maxRows='15'
                 defaultValue={this.props.python_3_code} 
                 onChange={this.props.handlePython_3_code}
                 style={{
@@ -37,8 +37,8 @@ class Python3to2 extends Component  {
                 variant="outlined"
                 color='primary'
                 fullWidth
-                minRows='20'
-                maxRows='20'
+                minRows='15'
+                maxRows='15'
                 value={this.props.python_2_code}
                 inputProps={
                   { readOnly: true, }
