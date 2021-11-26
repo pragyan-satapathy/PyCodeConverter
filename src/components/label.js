@@ -6,13 +6,33 @@ import {
 } from '@material-ui/core';
 
 class Label extends Component  {
-
+  constructor() {
+    super()
+    this.firstCopy = this.firstCopy.bind(this);
+    this.secondCopy = this.secondCopy.bind(this);
+  }
+  firstCopy(){
+    if (this.props.which_converter === '3to2') {
+      navigator.clipboard.writeText(this.props.python_3_code)
+    }
+    else {
+      navigator.clipboard.writeText(this.props.python_2_code)
+    }
+  }
+  secondCopy(){
+    if (this.props.which_converter === '3to2') {
+      navigator.clipboard.writeText(this.props.python_2_code)
+    }
+    else if (this.props.which_converter === '2to3') {
+      navigator.clipboard.writeText(this.props.python_3_code)
+    }
+  }
   render() {
     let firstText, secondText;
     if (this.props.which_converter === '3to2') {
       firstText = <h3>Python-3</h3>
       secondText = <h3>Python-2</h3>
-    } else {
+    } else if (this.props.which_converter === '2to3') {
       firstText = <h3>Python-2</h3>
       secondText = <h3>Python-3</h3>
     }
@@ -26,7 +46,7 @@ class Label extends Component  {
                   variant="contained" 
                   color="primary" 
                   size="small" 
-                  onClick={() => {navigator.clipboard.writeText(this.props.python_3_code)}}
+                  onClick={this.firstCopy}
               >COPY
               </Button>
               </Grid>
@@ -38,7 +58,7 @@ class Label extends Component  {
                   variant="contained" 
                   color="primary" 
                   size="small" 
-                  onClick={() => {navigator.clipboard.writeText(this.props.python_2_code)}}
+                  onClick={this.secondCopy}
               >COPY
               </Button>
               </Grid>
