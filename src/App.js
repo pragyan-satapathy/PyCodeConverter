@@ -3,6 +3,7 @@ import {
   Box,
   Toolbar,
   Typography,
+  Button,
 } from '@material-ui/core';
 import TabBar from './components/tabBar';
 
@@ -14,11 +15,13 @@ class App extends Component  {
         python_2_code: '',
         loading3to2: false,
         loading2to3: false,
+        ip: [],
     };
     this.handlePython_3_code = this.handlePython_3_code.bind(this);
     this.handlePython_2_code = this.handlePython_2_code.bind(this);
     this.getPyhton2Code = this.getPyhton2Code.bind(this);
     this.getPyhton3Code = this.getPyhton3Code.bind(this);
+    this.getIP = this.getIP.bind(this);
     this.clearStateOnTabChange = this.clearStateOnTabChange.bind(this);
   }
   handlePython_3_code(event) {
@@ -91,9 +94,29 @@ class App extends Component  {
     }
   }
 
+
+
+  async getIP() {
+    try {
+      const response = await fetch('https://api.pycodeconverter.com/myip', {
+        method: 'GET',
+      });
+      const data = await response.json()
+      
+      const final_res = data.ip
+      this.setState({ ip: final_res });
+      console.log("IP",this.state.ip)
+    } catch (error) {
+      console.log('catch',error);
+    } finally {
+    }
+  }
+
   render() {
     return (
       <Box style={{ background: '#eceff1', height: '100vh' }}>
+        <Button onClick={this.getIP}>GET IP ADDRESS</Button>
+        <p>{this.state.ip[0]}........{this.state.ip[1]}</p>
         <Toolbar style={{ background: '#2E3B55',color: 'white' }}>
           <Typography variant="h5">Python Code Converter</Typography>
         </Toolbar>
