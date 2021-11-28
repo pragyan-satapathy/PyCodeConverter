@@ -115,8 +115,8 @@ class App extends Component  {
   render() {
     return (
       <Box style={{ background: '#eceff1', height: '100vh' }}>
-        <Button onClick={this.getIP}>GET IP ADDRESS</Button>
-        <p>{this.state.ip}</p>
+        {/* <Button onClick={this.getIP}>GET IP ADDRESS</Button>
+        <p>{this.state.ip}</p> */}
         <Toolbar style={{ background: '#2E3B55',color: 'white' }}>
           <Typography variant="h5">Python Code Converter</Typography>
         </Toolbar>
