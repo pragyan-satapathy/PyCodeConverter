@@ -3,7 +3,6 @@ import {
   TextField,
   Box,
   Grid,
-  CircularProgress,
 } from '@material-ui/core';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import CustomButton from './button';
@@ -72,7 +71,7 @@ class Python3to2 extends Component  {
             onClick={this.props.getPyhton2Code}
             disabled={this.props.loading3to2}
             style={{width: '180px',}}>
-              {this.props.loading3to2 && <CircularProgress color="secondary" size={14} />}
+              {this.props.loading3to2 && 'LOADING...'}
               {!this.props.loading3to2 && 'CONVERT'}
           </CustomButton>
         </Grid>

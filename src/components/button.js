@@ -1,10 +1,9 @@
 import * as React from 'react';
-// import Stack from '@mui/material/Stack';
 import ButtonUnstyled, { buttonUnstyledClasses } from '@mui/base/ButtonUnstyled';
 import { styled } from '@mui/system';
 
 const CustomButtonRoot = styled('button')`
-  background-color: #007fff;
+  background-color: #d8043b;
   padding: 15px 20px;
   border-radius: 10px;
   color: #fff;
@@ -17,11 +16,11 @@ const CustomButtonRoot = styled('button')`
   border: none;
 
   &:hover {
-    background-color: #0059b2;
+    background-color: #b01940;
   }
 
   &.${buttonUnstyledClasses.active} {
-    background-color: #004386;
+    background-color: #8f203d;
   }
 
   &.${buttonUnstyledClasses.focusVisible} {
