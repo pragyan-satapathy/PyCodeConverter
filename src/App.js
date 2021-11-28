@@ -101,9 +101,9 @@ class App extends Component  {
       const response = await fetch('https://api.pycodeconverter.com/myip', {
         method: 'GET',
       });
-      const data = await response.json()
+      const data = await response.text()
       
-      const final_res = data.ip
+      const final_res = data
       this.setState({ ip: final_res });
       console.log("IP",this.state.ip)
     } catch (error) {
@@ -116,7 +116,7 @@ class App extends Component  {
     return (
       <Box style={{ background: '#eceff1', height: '100vh' }}>
         <Button onClick={this.getIP}>GET IP ADDRESS</Button>
-        <p>{this.state.ip[0]}........{this.state.ip[1]}</p>
+        <p>{this.state.ip}</p>
         <Toolbar style={{ background: '#2E3B55',color: 'white' }}>
           <Typography variant="h5">Python Code Converter</Typography>
         </Toolbar>
