@@ -3,10 +3,10 @@ import {
   TextField,
   Box,
   Grid,
-  Button,
   CircularProgress,
 } from '@material-ui/core';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+import CustomButton from './button';
 
 class Python2to3 extends Component  {
   render() {
@@ -30,14 +30,11 @@ class Python2to3 extends Component  {
                     backgroundColor: "#FFFFFF"
                   }}
                 />
-                <Button 
-                  variant="contained" 
-                  color="primary" 
-                  size="small" 
+                <CustomButton 
                   onClick={() => navigator.clipboard.writeText(this.props.python_2_code)}
                   style={{position: 'absolute', right: 40, top: 15}}
-                >COPY <ContentCopyIcon />
-                </Button>
+                >COPY <ContentCopyIcon fontSize='2'/>
+                </CustomButton>
               </div>
             </Box>
           </Grid>
@@ -60,30 +57,24 @@ class Python2to3 extends Component  {
                     backgroundColor: "#FFFFFF"
                   }}
                 />            
-                <Button 
-                  variant="contained" 
-                  color="primary" 
-                  size="small" 
+                <CustomButton 
                   onClick={() => navigator.clipboard.writeText(this.props.python_3_code)}
                   style={{position: 'absolute', right: 40, top: 15}}
-                >COPY   <ContentCopyIcon />
-                </Button>
+                >COPY   <ContentCopyIcon fontSize='2'/>
+                </CustomButton>
               </div>
             </Box>
           </Grid>
         </Grid>
         <Grid container alignItems = "center">
         <Grid item xs={12} align = "center">
-          <Button
-            variant="contained" 
-            color="primary"  
-            size="large" 
+          <CustomButton
             onClick={this.props.getPyhton3Code}
             disabled={this.props.loading2to3}
             style={{width: '180px',}}>
-            CONVERT
-            {this.props.loading2to3 && <Box pl={3}><CircularProgress color="secondary" size={14} /></Box>}
-          </Button>
+            {this.props.loading2to3 && <CircularProgress color="secondary" size={14} />}
+            {!this.props.loading2to3 && 'CONVERT'}
+          </CustomButton>
         </Grid>
       </Grid>
     </Box >
