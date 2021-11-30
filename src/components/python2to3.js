@@ -8,6 +8,12 @@ import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import CustomButton from './button';
 
 class Python2to3 extends Component  {
+  constructor() {
+    super();
+    this.state = {
+      width: window.innerWidth,
+    };
+  }
   render() {
     return (
         <Box>
@@ -29,11 +35,17 @@ class Python2to3 extends Component  {
                     backgroundColor: "#FFFFFF"
                   }}
                 />
-                <CustomButton 
+                {(this.state.width > 768) && <CustomButton 
                   onClick={() => navigator.clipboard.writeText(this.props.python_2_code)}
                   style={{position: 'absolute', right: 40, top: 15}}
                 >COPY <ContentCopyIcon fontSize='2'/>
-                </CustomButton>
+                </CustomButton>}
+              {(this.state.width < 768) && 
+              <ContentCopyIcon 
+                onClick={() => navigator.clipboard.writeText(this.props.python_2_code)}
+                fontSize='2'
+                style={{position: 'absolute', right: 10, top: 15, color: '#d8043b'}}
+              /> }
               </div>
             </Box>
           </Grid>
@@ -56,11 +68,18 @@ class Python2to3 extends Component  {
                     backgroundColor: "#FFFFFF"
                   }}
                 />            
+                {(this.state.width > 768) && 
                 <CustomButton 
                   onClick={() => navigator.clipboard.writeText(this.props.python_3_code)}
                   style={{position: 'absolute', right: 40, top: 15}}
                 >COPY   <ContentCopyIcon fontSize='2'/>
-                </CustomButton>
+                </CustomButton>}
+                {(this.state.width < 768) && 
+                <ContentCopyIcon 
+                  onClick={() => navigator.clipboard.writeText(this.props.python_3_code)}
+                  fontSize='2'
+                  style={{position: 'absolute', right: 10, top: 15, color: '#d8043b'}}
+                /> }
               </div>
             </Box>
           </Grid>

@@ -3,7 +3,6 @@ import {
   Box,
   Toolbar,
   Typography,
-  Button,
 } from '@material-ui/core';
 import TabBar from './components/tabBar';
 
